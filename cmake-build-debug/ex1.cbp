@@ -80,6 +80,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Activation.cpp">
+			<Option target="ex1"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Activation.h">
+			<Option target="ex1"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Matrix.cpp">
+			<Option target="ex1"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Matrix.h">
+			<Option target="ex1"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/main.cpp">
 			<Option target="ex1"/>
 		</Unit>
