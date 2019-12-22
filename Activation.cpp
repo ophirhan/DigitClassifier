@@ -21,7 +21,7 @@ Matrix& Activation::operator()(const Matrix &mat) const
     auto* result  = new Matrix(mat);
     if(act == Relu)
     {
-        for(int i = 0; i < mat.length(); i++)
+        for(int i = 0; i < mat.getCols()*mat.getRows(); i++)
         {
             if(mat[i] < 0)
             {
@@ -33,7 +33,7 @@ Matrix& Activation::operator()(const Matrix &mat) const
     else
     {
         float sum = 0;
-        for(int i = 0; i < mat.length(); i++)
+        for(int i = 0; i < mat.getRows()*mat.getCols(); i++)
         {
             mat[i] = std::exp(mat[i]);
             sum += mat[i];

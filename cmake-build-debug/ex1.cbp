@@ -86,10 +86,22 @@
 		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Activation.h">
 			<Option target="ex1"/>
 		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Dense.cpp">
+			<Option target="ex1"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Dense.h">
+			<Option target="ex1"/>
+		</Unit>
 		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Matrix.cpp">
 			<Option target="ex1"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/Matrix.h">
+			<Option target="ex1"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/MlpNetwork.cpp">
+			<Option target="ex1"/>
+		</Unit>
+		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/MlpNetwork.h">
 			<Option target="ex1"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/Ophir&apos;s laptop/Studies/67312_CCPP/C++/ex1/main.cpp">

@@ -184,8 +184,12 @@ Matrix& Matrix::operator+=(const Matrix &other)
 std::istream& operator>>(std::istream& in, Matrix &mat)
 {
     float inFloat;
-    for (int i = 0; i < mat.length() && in.good(); i++)
+    for (int i = 0; in.good(); i++)
     {
+        if(i > mat.getCols()*mat.getRows())
+        {
+            printErrorAndExit(MATRIX_OPERATOR_ERROR);
+        }
         in.read((char*) &inFloat, sizeof(float));
         mat[i] = inFloat;
     }
