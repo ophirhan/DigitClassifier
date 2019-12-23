@@ -13,7 +13,7 @@ public:
     Dense(const Matrix &weights, const Matrix &bias, ActivationType act);
     const Matrix& getWeights() const;
     const Matrix& getBias() const;
-    const Activation & getActivation() const;
+    const Activation& getActivation() const;
     Matrix& operator()(const Matrix &matrix) const;
 private:
     Matrix weights;

@@ -105,7 +105,7 @@ Matrix& Matrix::operator=(const Matrix &other)
 
 Matrix& Matrix::operator*(const Matrix &right) const
 {
-    if(getRows()!=right.getCols())
+    if(getCols()!=right.getRows())
     {
         std::cerr << MATRIX_OPERATOR_ERROR << std::endl;
         exit(1);
@@ -161,12 +161,22 @@ Matrix& Matrix::operator+(const Matrix &other) const
     return *result;
 }
 
-float& Matrix::operator()(int row, int col) const
+float& Matrix::operator()(const int row,const int col)
 {
     return (*this)[row*getCols() + col];
 }
 
-float& Matrix::operator[](int i) const
+float& Matrix::operator[](const int i)
+{
+    return matrix[i];
+}
+
+const float& Matrix::operator()(const int row,const int col) const
+{
+    return (*this)[row*getCols() + col];
+}
+
+const float& Matrix::operator[](const int i) const
 {
     return matrix[i];
 }
@@ -181,38 +191,35 @@ Matrix& Matrix::operator+=(const Matrix &other)
     return *this;
 }
 
-std::istream& operator>>(std::istream& in, Matrix &mat)
+std::istream& operator>>(std::istream &in, Matrix &mat)
 {
-    float inFloat;
-    for (int i = 0; in.good(); i++)
+    if(in)
     {
-        if(i > mat.getCols()*mat.getRows())
+        in.read((char*) mat.matrix, mat.getCols()*mat.getRows()* sizeof(float));
+        if(!in.good())
         {
             printErrorAndExit(MATRIX_OPERATOR_ERROR);
         }
-        in.read((char*) &inFloat, sizeof(float));
-        mat[i] = inFloat;
     }
     return in;
 }
 
 std::ostream& operator<<(std::ostream& out, Matrix &mat)
 {
-    out << "Image processed:" << "\n" << std::endl;
     for(int i = 0; i < mat.getCols(); i++)
     {
         for(int j = 0; j < mat.getRows(); j++)
         {
-            if(mat(i,j) <= 0.1)
+            if(mat(i,j) <= DRAWING_THRESHOLD)
             {
-                out << "  " << std::endl;
+                out << "  ";
             }
             else
             {
-                out << "**" << std::endl;
+                out << "**";
             }
         }
-        out << "\n" << std::endl;
+        out << std::endl;
     }
     return out;
 }

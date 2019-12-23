@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ex1" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="&quot;C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\w1&quot; &quot;C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\w2&quot; &quot;C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\w3&quot; &quot;C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\w4&quot; &quot;C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\b1&quot; &quot;C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\b2&quot; &quot;C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\b3&quot; &quot;C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\b4&quot;" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ex1" TARGET_NAME="ex1" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ex1" RUN_TARGET_NAME="ex1">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

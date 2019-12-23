@@ -107,10 +107,12 @@ void loadParameters(char *paths[ARGS_COUNT], Matrix weights[MLP_SIZE], Matrix bi
 void mlpCli(MlpNetwork &mlp)
 {
     Matrix img(imgDims.rows, imgDims.cols);
+    //std::string imgPath = R"(C:\Users\Ophir's laptop\Studies\67312_CCPP\C++\ex1\images\im2)";
     std::string imgPath;
 
     std::cout << INSERT_IMAGE_PATH << std::endl;
     std::cin >> imgPath;
+
     if(!std::cin.good())
     {
         std::cout << ERROR_INVALID_INPUT << std::endl;

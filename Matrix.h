@@ -5,6 +5,7 @@
 #define MATRIX_H
 
 
+#define DRAWING_THRESHOLD 0.1
 /**
  * @struct MatrixDims
  * @brief Matrix dimensions container
@@ -30,8 +31,10 @@ public:
     Matrix& operator*(const float &) const;
     Matrix& operator+(const Matrix &) const;
     Matrix& operator+=(const Matrix &);
-    float& operator()(int, int) const;
-    float& operator[](int) const;
+    float& operator()(int, int);
+    float& operator[](int);
+    const float& operator()(int, int) const;
+    const float& operator[](int) const;
     friend std::istream& operator>>(std::istream &in, Matrix &mat);
     friend std::ostream& operator<<(std::ostream &out, Matrix &mat);
     friend Matrix& operator*(const float &, const Matrix &);

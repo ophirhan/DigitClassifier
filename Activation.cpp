@@ -35,10 +35,10 @@ Matrix& Activation::operator()(const Matrix &mat) const
         float sum = 0;
         for(int i = 0; i < mat.getRows()*mat.getCols(); i++)
         {
-            mat[i] = std::exp(mat[i]);
-            sum += mat[i];
+            (*result)[i] = std::exp(mat[i]);
+            sum += (*result)[i];
         }
         float scalar = 1/sum;
-        *result = scalar*mat;
+        return scalar*(*result);
     }
 }
