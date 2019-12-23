@@ -123,6 +123,45 @@ ex1/fast:
 	$(MAKE) -f CMakeFiles/ex1.dir/build.make CMakeFiles/ex1.dir/build
 .PHONY : ex1/fast
 
+#=============================================================================
+# Target rules for targets named mlpnetwork-lib
+
+# Build rule for target.
+mlpnetwork-lib: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mlpnetwork-lib
+.PHONY : mlpnetwork-lib
+
+# fast build rule for target.
+mlpnetwork-lib/fast:
+	$(MAKE) -f tests/CMakeFiles/mlpnetwork-lib.dir/build.make tests/CMakeFiles/mlpnetwork-lib.dir/build
+.PHONY : mlpnetwork-lib/fast
+
+#=============================================================================
+# Target rules for targets named tests
+
+# Build rule for target.
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
+
+# fast build rule for target.
+tests/fast:
+	$(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
+
+#=============================================================================
+# Target rules for targets named mlpnetwork-executable
+
+# Build rule for target.
+mlpnetwork-executable: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mlpnetwork-executable
+.PHONY : mlpnetwork-executable
+
+# fast build rule for target.
+mlpnetwork-executable/fast:
+	$(MAKE) -f tests/CMakeFiles/mlpnetwork-executable.dir/build.make tests/CMakeFiles/mlpnetwork-executable.dir/build
+.PHONY : mlpnetwork-executable/fast
+
 Activation.o: Activation.cpp.o
 
 .PHONY : Activation.o
@@ -267,6 +306,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... ex1"
 	@echo "... edit_cache"
+	@echo "... mlpnetwork-lib"
+	@echo "... tests"
+	@echo "... mlpnetwork-executable"
 	@echo "... Activation.o"
 	@echo "... Activation.i"
 	@echo "... Activation.s"

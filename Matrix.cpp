@@ -3,13 +3,17 @@
 //
 #include "Matrix.h"
 
-#define MATRIX_OPERATOR_ERROR ""
+#define MATRIX_OPERATOR_ERROR "dashjk"
 
 
 Matrix::Matrix(const int &rows,const int &cols):
 dims({rows, cols})
 {
-
+    if(rows < 1 || cols < 1)
+    {
+        std::cerr << MATRIX_OPERATOR_ERROR << std::endl;
+        exit(EXIT_FAILURE);
+    }
     matrix = new(std::nothrow) float[rows*cols];
     for(int i = 0; i < length();i++)
     {
@@ -76,11 +80,12 @@ Matrix& Matrix::operator=(const Matrix &other)
         delete [] matrix;
         matrix = new(std::nothrow) float[other.length()];
     }
+    dims = other.dims;
     for(int i = 0; i< other.length();i++)
     {
         (*this)[i] = other[i];
     }
-    dims = other.dims;
+
     return *this;
 }
 
@@ -129,21 +134,43 @@ Matrix Matrix::operator+(const Matrix &other) const
 
 float& Matrix::operator()(const int row,const int col)
 {
-    return (*this)[row*getCols() + col];
+    int index = row*getCols() + col;
+    if(row < 0 || col < 0 || col >= getCols() || row >= getRows())
+    {
+        std::cerr << "6855675587" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    return (*this)[index];
 }
 
 float& Matrix::operator[](const int i)
 {
+    if(i < 0 || i >= length())
+    {
+        std::cerr << "9" << std::endl;
+        exit(EXIT_FAILURE);
+    }
     return matrix[i];
 }
 
 const float& Matrix::operator()(const int row,const int col) const
 {
-    return (*this)[row*getCols() + col];
+    int index = row*getCols() + col;
+    if(row < 0 || col < 0 || col >= getCols() || row >= getRows())
+    {
+        std::cerr << "2" << std::endl;
+        exit(EXIT_FAILURE);
+    }
+    return (*this)[index];
 }
 
 const float& Matrix::operator[](const int i) const
 {
+    if(i < 0 || i >= length())
+    {
+        std::cerr << MATRIX_OPERATOR_ERROR << std::endl;
+        exit(EXIT_FAILURE);
+    }
     return matrix[i];
 }
 

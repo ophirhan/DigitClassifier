@@ -1,3 +1,8 @@
 /cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/CMakeFiles/ex1.dir
 /cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/CMakeFiles/rebuild_cache.dir
+/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/CMakeFiles/edit_cache.dir
+/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/CMakeFiles/mlpnetwork-lib.dir
+/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/CMakeFiles/tests.dir
+/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/CMakeFiles/mlpnetwork-executable.dir

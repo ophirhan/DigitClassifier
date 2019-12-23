@@ -5,7 +5,7 @@
 		<Option title="ex1"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\tests\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug"/>
@@ -81,36 +81,201 @@
 					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="mlpnetwork-lib">
+				<Option output="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/libmlpnetwork-lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cs/usr/ophirhan/CLionProjects/cpp_ex1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 mlpnetwork-lib"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mlpnetwork-lib/fast">
+				<Option output="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/libmlpnetwork-lib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cs/usr/ophirhan/CLionProjects/cpp_ex1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 mlpnetwork-lib/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tests">
+				<Option output="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cs/usr/ophirhan/CLionProjects/cpp_ex1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 tests"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="tests/fast">
+				<Option output="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cs/usr/ophirhan/CLionProjects/cpp_ex1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 tests/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mlpnetwork-executable">
+				<Option output="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/mlpnetwork-executable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cs/usr/ophirhan/CLionProjects/cpp_ex1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 mlpnetwork-executable"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mlpnetwork-executable/fast">
+				<Option output="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/mlpnetwork-executable" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/cs/usr/ophirhan/CLionProjects/cpp_ex1"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/8"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/8/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 mlpnetwork-executable/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/cs/usr/ophirhan/CLionProjects/cpp_ex1/cmake-build-debug/tests/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/Activation.cpp">
 			<Option target="ex1"/>
+			<Option target="mlpnetwork-lib"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/Activation.h">
-			<Option target="ex1"/>
+			<Option target="mlpnetwork-lib"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/Dense.cpp">
 			<Option target="ex1"/>
+			<Option target="mlpnetwork-lib"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/Dense.h">
 			<Option target="ex1"/>
+			<Option target="mlpnetwork-lib"/>
+		</Unit>
+		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/Digit.h">
+			<Option target="mlpnetwork-lib"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/Matrix.cpp">
 			<Option target="ex1"/>
+			<Option target="mlpnetwork-lib"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/Matrix.h">
-			<Option target="ex1"/>
+			<Option target="mlpnetwork-lib"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/MlpNetwork.cpp">
 			<Option target="ex1"/>
+			<Option target="mlpnetwork-lib"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/MlpNetwork.h">
-			<Option target="ex1"/>
+			<Option target="mlpnetwork-lib"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/main.cpp">
 			<Option target="ex1"/>
+			<Option target="mlpnetwork-executable"/>
+		</Unit>
+		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/tests/activation_tests.cpp">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/tests/catch.hpp">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/tests/matrix_tests.cpp">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/tests/test_main.cpp">
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/tests/util.h">
+			<Option target="tests"/>
 		</Unit>
 		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/cs/usr/ophirhan/CLionProjects/cpp_ex1/tests/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\tests\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
