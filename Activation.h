@@ -17,7 +17,7 @@ enum ActivationType
 class Activation{
 public:
     ActivationType getActivationType() const;
-    Matrix& operator()(const Matrix &mat) const;
+    Matrix operator()(const Matrix &mat) const;
     Activation(ActivationType act);
 private:
     ActivationType act;

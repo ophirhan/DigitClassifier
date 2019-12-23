@@ -14,7 +14,7 @@ public:
     const Matrix& getWeights() const;
     const Matrix& getBias() const;
     const Activation& getActivation() const;
-    const Matrix& operator()(const Matrix &matrix) const;
+    Matrix operator()(const Matrix &matrix) const;
 private:
     Matrix weights;
     Matrix bias;

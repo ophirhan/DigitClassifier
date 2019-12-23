@@ -1,12 +1,11 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/ex1.dir/main.cpp.o"
+  "CMakeFiles/ex1.dir/Matrix.cpp.o"
   "CMakeFiles/ex1.dir/Activation.cpp.o"
   "CMakeFiles/ex1.dir/Dense.cpp.o"
-  "CMakeFiles/ex1.dir/Matrix.cpp.o"
   "CMakeFiles/ex1.dir/MlpNetwork.cpp.o"
-  "CMakeFiles/ex1.dir/main.cpp.o"
-  "ex1.exe"
   "ex1.pdb"
-  "libex1.dll.a"
+  "ex1"
 )
 
 # Per-language clean rules from dependency scanning.

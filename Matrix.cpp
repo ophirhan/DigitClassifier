@@ -1,30 +1,16 @@
 //
 // Created by Ophir's laptop on 17/12/2019.
 //
-#include <iostream>
-#include <cstring>
 #include "Matrix.h"
 
-#define NEW_MATRIX_ERROR ""
 #define MATRIX_OPERATOR_ERROR ""
 
-
-
-float* newMatrix(const int &length)
-{
-    auto* result = new(std::nothrow) float[length];
-    if(result == nullptr)
-    {
-        std::cerr << NEW_MATRIX_ERROR << std::endl;
-        exit(1);
-    }
-    return result;
-}
 
 Matrix::Matrix(const int &rows,const int &cols):
 dims({rows, cols})
 {
-    matrix = newMatrix(length());
+
+    matrix = new(std::nothrow) float[rows*cols];
     for(int i = 0; i < length();i++)
     {
         matrix[i] = 0;
@@ -36,14 +22,13 @@ int Matrix::length() const
     return getRows()*getCols();
 }
 
-
 Matrix::Matrix():
 Matrix(1,1)
 {
 }
 
 Matrix::Matrix(const Matrix &other):
-matrix(newMatrix(other.length())), dims({other.getRows(), other.getCols()})
+matrix(new(std::nothrow) float[other.length()]), dims({other.getRows(), other.getCols()})
 {
     for(int i = 0; i < other.length();i++)
     {
@@ -74,26 +59,22 @@ Matrix& Matrix::vectorize()
 
 void Matrix::plainPrint() const
 {
-    for(int i = 0; i < getCols(); i++)
+    for(int i = 0; i < getRows(); i++)
     {
-        for(int j = 0; j < getRows(); j++)
+        for(int j = 0; j < getCols(); j++)
         {
             std::cout << (*this)(i, j) << " ";
         }
-        std::cout << "\n";
+        std::cout << std::endl;
     }
 }
 
 Matrix& Matrix::operator=(const Matrix &other)
 {
-    if(&other == this)
-    {
-        return *this;
-    }
     if(other.length() != length())
     {
         delete [] matrix;
-        matrix = newMatrix(other.length());
+        matrix = new(std::nothrow) float[other.length()];
     }
     for(int i = 0; i< other.length();i++)
     {
@@ -103,62 +84,47 @@ Matrix& Matrix::operator=(const Matrix &other)
     return *this;
 }
 
-Matrix& Matrix::operator*(const Matrix &right) const
+Matrix Matrix::operator*(const Matrix &right) const
 {
-    if(getCols()!=right.getRows())
+    if(getCols() != right.getRows())
     {
         std::cerr << MATRIX_OPERATOR_ERROR << std::endl;
-        exit(1);
+        exit(EXIT_FAILURE);
     }
-    auto* result = new Matrix(getRows(),right.getCols());
-    for(int row = 0; row < result->getRows(); row++)
+    Matrix result(getRows(), right.getCols());
+    for(int row = 0; row < result.getRows(); row++)
     {
-        for(int col = 0; col < result->getCols(); col++)
+        for(int col = 0; col < result.getCols(); col++)
         {
             for(int i = 0; i < getCols(); i++)
             {
-                (*result)(row, col) += (*this)(row, i) * right(i, col);
+                result(row, col) += (*this)(row, i) * right(i, col);
             }
         }
     }
-    return *result;
+    return result;
 }
 
-Matrix& Matrix::operator*(const float &scalar) const
+Matrix Matrix::operator*(const float &scalar) const
 {
-    auto* result = new Matrix(*this);
+    Matrix result(*this);
     for(int i = 0; i < length(); i++)
     {
-        (*result)[i] *= scalar;
+        result[i] *= scalar;
     }
-    return *result;
+    return result;
 }
 
-Matrix& operator*(const float &scalar, const Matrix &mat)
+Matrix operator*(const float &scalar, const Matrix &mat)
 {
     return mat*scalar;
 }
 
-void printErrorAndExit(const std::string &msg)
+Matrix Matrix::operator+(const Matrix &other) const
 {
-    std::cerr << msg << std::endl;
-    exit(EXIT_FAILURE);
-}
-
-void checkSameDim(const Matrix &left, const Matrix &right)
-{
-    if(left.getRows() != right.getRows() || left.getCols() != right.getCols())
-    {
-        printErrorAndExit(MATRIX_OPERATOR_ERROR);
-    }
-}
-
-Matrix& Matrix::operator+(const Matrix &other) const
-{
-    checkSameDim((*this), other);
-    auto* result = new Matrix(*this);
-    *result += other;
-    return *result;
+    Matrix result(*this);
+    result += other;
+    return result;
 }
 
 float& Matrix::operator()(const int row,const int col)
@@ -183,7 +149,11 @@ const float& Matrix::operator[](const int i) const
 
 Matrix& Matrix::operator+=(const Matrix &other)
 {
-    checkSameDim(*this, other);
+    if((*this).getRows() != other.getRows() || (*this).getCols() != other.getCols())
+    {
+        std::cerr << MATRIX_OPERATOR_ERROR << std::endl;
+        exit(EXIT_FAILURE);
+    }
     for(int i = 0; i < length(); i++)
     {
         (*this)[i] += other[i];
@@ -198,7 +168,8 @@ std::istream& operator>>(std::istream &in, Matrix &mat)
         in.read((char*) mat.matrix, mat.getCols()*mat.getRows()* sizeof(float));
         if(!in.good())
         {
-            printErrorAndExit(MATRIX_OPERATOR_ERROR);
+            std::cerr << MATRIX_OPERATOR_ERROR << std::endl;
+            exit(EXIT_FAILURE);
         }
     }
     return in;
@@ -206,9 +177,9 @@ std::istream& operator>>(std::istream &in, Matrix &mat)
 
 std::ostream& operator<<(std::ostream& out, Matrix &mat)
 {
-    for(int i = 0; i < mat.getCols(); i++)
+    for(int i = 0; i < mat.getRows(); i++)
     {
-        for(int j = 0; j < mat.getRows(); j++)
+        for(int j = 0; j < mat.getCols(); j++)
         {
             if(mat(i,j) <= DRAWING_THRESHOLD)
             {

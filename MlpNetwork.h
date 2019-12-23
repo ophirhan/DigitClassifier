@@ -17,7 +17,7 @@ class MlpNetwork
 {
 public:
     MlpNetwork(const Matrix weights[], const Matrix biases[]);
-    Digit operator()(const Matrix &);
+    Digit operator()(const Matrix &) const;
 
 private:
     const Dense denseOne;

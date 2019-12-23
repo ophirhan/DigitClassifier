@@ -27,7 +27,7 @@ const Activation& Dense::getActivation() const
     return act;
 }
 
-const Matrix& Dense::operator()(const Matrix &mat) const
+Matrix Dense::operator()(const Matrix &mat) const
 {
     Matrix result = weights*mat;
     result += bias;

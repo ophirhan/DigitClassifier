@@ -16,29 +16,29 @@ act(act)
 {
 }
 
-Matrix& Activation::operator()(const Matrix &mat) const
+Matrix Activation::operator()(const Matrix &mat) const
 {
-    auto* result  = new Matrix(mat);
+    Matrix result(mat);
     if(act == Relu)
     {
         for(int i = 0; i < mat.getCols()*mat.getRows(); i++)
         {
             if(mat[i] < 0)
             {
-                (*result)[i] = 0;
+                result[i] = 0;
             }
         }
-        return *result;
+        return result;
     }
     else
     {
         float sum = 0;
         for(int i = 0; i < mat.getRows()*mat.getCols(); i++)
         {
-            (*result)[i] = std::exp(mat[i]);
-            sum += (*result)[i];
+            result[i] = std::exp(mat[i]);
+            sum += result[i];
         }
         float scalar = 1/sum;
-        return scalar*(*result);
+        return scalar*result;
     }
 }

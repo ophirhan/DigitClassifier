@@ -27,9 +27,10 @@ public:
     Matrix& vectorize();
     void plainPrint() const;
     Matrix& operator=(const Matrix &);
-    Matrix& operator*(const Matrix &) const;
-    Matrix& operator*(const float &) const;
-    Matrix& operator+(const Matrix &) const;
+    Matrix operator*(const Matrix &) const;
+    Matrix operator*(const float &) const;
+    friend Matrix operator*(const float &, const Matrix &);
+    Matrix operator+(const Matrix &) const;
     Matrix& operator+=(const Matrix &);
     float& operator()(int, int);
     float& operator[](int);
@@ -37,7 +38,6 @@ public:
     const float& operator[](int) const;
     friend std::istream& operator>>(std::istream &in, Matrix &mat);
     friend std::ostream& operator<<(std::ostream &out, Matrix &mat);
-    friend Matrix& operator*(const float &, const Matrix &);
 
 
 private:

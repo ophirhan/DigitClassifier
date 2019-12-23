@@ -1,14 +1,9 @@
 //
 // Created by Ophir's laptop on 21/12/2019.
 //
-
-#include <new>
-#include <iostream>
 #include "MlpNetwork.h"
 #include "Activation.h"
 
-#define NUMBER_OF_DIGITS (10)
-#define WRONG_MATRIX_SIZE "Error: Wrong matrix size"
 
 MlpNetwork::MlpNetwork(const Matrix *weights, const Matrix *biases) :
         denseOne(weights[0], biases[0], Relu),
@@ -18,17 +13,12 @@ MlpNetwork::MlpNetwork(const Matrix *weights, const Matrix *biases) :
 {
 }
 
-Digit MlpNetwork::operator()(const Matrix &mat)
+Digit MlpNetwork::operator()(const Matrix &mat) const
 {
     Matrix result = denseFour(denseThree(denseTwo(denseOne(mat))));
-    if(result.getRows()*result.getCols() != NUMBER_OF_DIGITS)
-    {
-        std::cerr << WRONG_MATRIX_SIZE << std::endl;
-        exit(EXIT_FAILURE);
-    }
     unsigned int value = 0;
     float maxProbability = result[0];
-    for(int i = 1; i < NUMBER_OF_DIGITS; i++)
+    for(int i = 1; i < result.getRows(); i++)
     {
         if(maxProbability < result[i])
         {
