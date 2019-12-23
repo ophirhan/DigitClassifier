@@ -142,7 +142,7 @@ Matrix& operator*(const float &scalar, const Matrix &mat)
 void printErrorAndExit(const std::string &msg)
 {
     std::cerr << msg << std::endl;
-    exit(1);
+    exit(EXIT_FAILURE);
 }
 
 void checkSameDim(const Matrix &left, const Matrix &right)
