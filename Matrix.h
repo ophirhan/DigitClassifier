@@ -5,7 +5,7 @@
 #define MATRIX_H
 
 
-#define DRAWING_THRESHOLD 0.1
+#define DRAWING_THRESHOLD (0.1f)
 /**
  * @struct MatrixDims
  * @brief Matrix dimensions container
