@@ -6,16 +6,30 @@
 #include "Activation.h"
 #include "Matrix.h"
 
+/**
+ * @return ActivationType of the object.
+ */
 ActivationType Activation::getActivationType() const
 {
     return act;
 }
 
+
+/**
+ * Creates new Activation object.
+ * @param act ActivationType of the wanted object.
+ */
 Activation::Activation(ActivationType act):
 act(act)
 {
 }
 
+
+/**
+ * @brief Performs the function on a given matrix
+ * @param mat matrix to perform function on.
+ * @return result of function.
+ */
 Matrix Activation::operator()(const Matrix &mat) const
 {
     Matrix result(mat);

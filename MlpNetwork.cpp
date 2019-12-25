@@ -5,6 +5,11 @@
 #include "Activation.h"
 
 
+/**
+ * Creates new MlpNetwork object.
+ * @param weights array of matrices for Dense objects within the object.
+ * @param biases array of matrices for Dense objects within the object.
+ */
 MlpNetwork::MlpNetwork(const Matrix *weights, const Matrix *biases) :
         denseOne(weights[0], biases[0], Relu),
         denseTwo(weights[1], biases[1], Relu),
@@ -13,6 +18,10 @@ MlpNetwork::MlpNetwork(const Matrix *weights, const Matrix *biases) :
 {
 }
 
+/**
+ * puts a given matrix through the network.
+ * @return result of network operation.
+ */
 Digit MlpNetwork::operator()(const Matrix &mat) const
 {
     Matrix result = denseFour(denseThree(denseTwo(denseOne(mat))));
