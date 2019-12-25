@@ -19,8 +19,8 @@ ActivationType Activation::getActivationType() const
  * Creates new Activation object.
  * @param act ActivationType of the wanted object.
  */
-Activation::Activation(ActivationType act):
-act(act)
+Activation::Activation(ActivationType act) :
+        act(act)
 {
 }
 
@@ -33,11 +33,11 @@ act(act)
 Matrix Activation::operator()(const Matrix &mat) const
 {
     Matrix result(mat);
-    if(act == Relu)
+    if (act == Relu)
     {
-        for(int i = 0; i < mat.getCols()*mat.getRows(); i++)
+        for (int i = 0; i < mat.getCols() * mat.getRows(); i++)
         {
-            if(mat[i] < 0)
+            if (mat[i] < 0)
             {
                 result[i] = 0;
             }
@@ -47,12 +47,12 @@ Matrix Activation::operator()(const Matrix &mat) const
     else
     {
         float sum = 0;
-        for(int i = 0; i < mat.getRows()*mat.getCols(); i++)
+        for (int i = 0; i < mat.getRows() * mat.getCols(); i++)
         {
             result[i] = std::exp(mat[i]);
             sum += result[i];
         }
-        float scalar = 1/sum;
-        return scalar*result;
+        float scalar = 1 / sum;
+        return scalar * result;
     }
 }

@@ -27,9 +27,9 @@ Digit MlpNetwork::operator()(const Matrix &mat) const
     Matrix result = denseFour(denseThree(denseTwo(denseOne(mat))));
     unsigned int value = 0;
     float maxProbability = result[0];
-    for(int i = 1; i < result.getRows(); i++)
+    for (int i = 1; i < result.getRows(); i++)
     {
-        if(maxProbability < result[i])
+        if (maxProbability < result[i])
         {
             value = i;
             maxProbability = result[i];

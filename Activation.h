@@ -17,7 +17,8 @@ enum ActivationType
 /**
  * @brief Activation object performs activation function on matrix.
  */
-class Activation{
+class Activation
+{
 public:
     /**
      * @return ActivationType of the object.
@@ -36,6 +37,7 @@ public:
      * @param act ActivationType of the wanted object.
      */
     Activation(ActivationType act);
+
 private:
     /**
      * ActivationType of the object.

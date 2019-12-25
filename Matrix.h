@@ -60,7 +60,7 @@ public:
      * @breif Turns a given matrix in vector shape.
      * @return given matrix as vector.
      */
-    Matrix& vectorize();
+    Matrix &vectorize();
 
     /**
      * @breif Prints matrix elements, no return value.
@@ -71,7 +71,7 @@ public:
      * @breif Sets the matrix to be same as given matrix
      * @return a reference to the matrix.
      */
-    Matrix& operator=(const Matrix &);
+    Matrix &operator=(const Matrix &);
 
     /**
      * @breif Matrix multiplication.
@@ -101,33 +101,33 @@ public:
      * @breif Sets the matrix to be the result of addition between it and a given matrix.
      * @return the matrix.
      */
-    Matrix& operator+=(const Matrix &);
+    Matrix &operator+=(const Matrix &);
 
     /**
      * @breif Returns the float in the corresponding cell of the matrix.
      * @return float
      */
-    float& operator()(int, int);
-
-
-    /**
-     * @breif Returns the float in the corresponding cell of the matrix.
-     * @return float
-     */
-    float& operator[](int);
+    float &operator()(int, int);
 
 
     /**
      * @breif Returns the float in the corresponding cell of the matrix.
      * @return float
      */
-    const float& operator()(int, int) const;
+    float &operator[](int);
+
 
     /**
      * @breif Returns the float in the corresponding cell of the matrix.
      * @return float
      */
-    const float& operator[](int) const;
+    const float &operator()(int, int) const;
+
+    /**
+     * @breif Returns the float in the corresponding cell of the matrix.
+     * @return float
+     */
+    const float &operator[](int) const;
 
     /**
      * @breif Reads an input stream into a matrix.
@@ -135,7 +135,7 @@ public:
      * @param mat the matrix.
      * @return the stream.
      */
-    friend std::istream& operator>>(std::istream &in, Matrix &mat);
+    friend std::istream &operator>>(std::istream &in, Matrix &mat);
 
     /**
      * @breif Outputs the content of a matrix to a given stream.
@@ -143,7 +143,7 @@ public:
      * @param mat the matrix to output
      * @return the stream.
      */
-    friend std::ostream& operator<<(std::ostream &out, Matrix &mat);
+    friend std::ostream &operator<<(std::ostream &out, Matrix &mat);
 
 
 private:

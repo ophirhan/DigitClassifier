@@ -24,17 +24,17 @@ public:
     /**
      * @return Matrix weights.
      */
-    const Matrix& getWeights() const;
+    const Matrix &getWeights() const;
 
     /**
      * @return Matrix bias.
      */
-    const Matrix& getBias() const;
+    const Matrix &getBias() const;
 
     /**
      * @return Activation object.
      */
-    const Activation& getActivation() const;
+    const Activation &getActivation() const;
 
     /**
      * performs all actions on a given matrix and returns result
@@ -42,6 +42,7 @@ public:
      * @return matrix result after all actions.
      */
     Matrix operator()(const Matrix &matrix) const;
+
 private:
 
     /**
